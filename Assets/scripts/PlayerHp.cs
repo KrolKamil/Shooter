@@ -25,7 +25,6 @@ public class PlayerHp : MonoBehaviour
 
     public void TakeDamage()
     {
-        Debug.Log($"I TOOK DMG: {Time.deltaTime}");
         float timeBetweenHits = timer - gotHitAt;
         if ((timeBetweenHits >= 3) || gotHitAt == 0.0f)
         {
