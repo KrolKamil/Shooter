@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("XD");
         this.currentDirrection = Vector3.zero;
         this.rgb2d.velocity = Vector3.zero;
     }
