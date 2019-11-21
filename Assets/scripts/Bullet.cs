@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
         {
             hp.TakeDamage(damage);
         }
-        if(collision.gameObject.tag != "Spawn")
+        if( (collision.gameObject.tag != "Spawn") && (collision.gameObject.tag != "Bullet"))
         {
             Destroy(gameObject);
         }

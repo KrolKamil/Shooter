@@ -23,7 +23,7 @@ public class HitPlayer : MonoBehaviour
         {
             playerFromConllision.TakeDamage();
         }
-        if ((collision.gameObject.tag != "Spawn") && (collision.gameObject.tag != "Enemy"))
+        if ((collision.gameObject.tag != "Spawn") && (collision.gameObject.tag != "Enemy") && (collision.gameObject.tag != "Bullet"))
         {
             Destroy(gameObject);
         }
