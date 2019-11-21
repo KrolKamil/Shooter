@@ -60,12 +60,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\scripts\Boss.cs" />
+    <Compile Include="Assets\scripts\BossRespawnMinions.cs" />
     <Compile Include="Assets\scripts\Bullet.cs" />
     <Compile Include="Assets\scripts\CameraController.cs" />
     <Compile Include="Assets\scripts\Enemy.cs" />
     <Compile Include="Assets\scripts\FaceMouse.cs" />
+    <Compile Include="Assets\scripts\FollowPlayer.cs" />
+    <Compile Include="Assets\scripts\HitPoints.cs" />
     <Compile Include="Assets\scripts\PlayerController.cs" />
     <Compile Include="Assets\scripts\PlayerHp.cs" />
+    <Compile Include="Assets\scripts\SpawnEnemy.cs" />
+    <Compile Include="Assets\scripts\SummonBoss.cs" />
     <Compile Include="Assets\scripts\Weapon.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Kamil/Desktop/Private/Unity/Project/Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

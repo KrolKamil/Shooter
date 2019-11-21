@@ -21,11 +21,14 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Enemy enemy = collision.GetComponent<Enemy>();
-        if (enemy != null)
+        HitPoints hp = collision.GetComponent<HitPoints>();
+        if (hp != null)
         {
-            enemy.TakeDamage(damage);
+            hp.TakeDamage(damage);
         }
-        Destroy(gameObject);
+        if(collision.gameObject.tag != "Spawn")
+        {
+            Destroy(gameObject);
+        }
     }
 }
