@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHp : MonoBehaviour
 {
@@ -40,6 +41,6 @@ public class PlayerHp : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        SceneManager.LoadScene("Lost");
     }
 }

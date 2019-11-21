@@ -65,8 +65,12 @@
     <Compile Include="Assets\scripts\Bullet.cs" />
     <Compile Include="Assets\scripts\CameraController.cs" />
     <Compile Include="Assets\scripts\Enemy.cs" />
+    <Compile Include="Assets\scripts\EnemyBullet.cs" />
+    <Compile Include="Assets\scripts\EnemyWeapon.cs" />
     <Compile Include="Assets\scripts\FaceMouse.cs" />
     <Compile Include="Assets\scripts\FollowPlayer.cs" />
+    <Compile Include="Assets\scripts\GameController.cs" />
+    <Compile Include="Assets\scripts\HitPlayer.cs" />
     <Compile Include="Assets\scripts\HitPoints.cs" />
     <Compile Include="Assets\scripts\PlayerController.cs" />
     <Compile Include="Assets\scripts\PlayerHp.cs" />

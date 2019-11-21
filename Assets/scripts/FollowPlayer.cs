@@ -8,6 +8,7 @@ public class FollowPlayer : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
+    private float distance = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +22,20 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
         Vector3 direction = playerTransform.position - transform.position;
-        float distane = Mathf.Sqrt((direction.x * direction.x) + (direction.y * direction.y));
-        if (distane < 8)
-        {
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            rb.rotation = angle;
-            direction.Normalize();
-            movement = direction;
-        }
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        angle -= 90;
+        rb.rotation = angle;
+        direction.Normalize();
+        movement = direction;
+        distance = Mathf.Sqrt((direction.x * direction.x) + (direction.y * direction.y));
     }
 
     private void FixedUpdate()
     {
-        moveCharacter(movement);
+        if (distance < 8)
+        {
+            moveCharacter(movement);
+        }
     }
 
     void moveCharacter(Vector2 direction)
