@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8317222807774756721}
   - component: {fileID: 5263657805468721518}
   - component: {fileID: 4964665633545760140}
+  - component: {fileID: 114305848551128272}
   m_Layer: 0
   m_Name: ExplodingBullet
   m_TagString: Bullet
@@ -143,9 +144,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69133903162e7514fa4aafca2e422d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
   speed: 20
   basicBullet: {fileID: 4909361149446003753, guid: e3e40cec2f917614fa39ef6478478782,
     type: 3}
+--- !u!114 &114305848551128272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3553655774953346307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfef28298119f314fa3769c764e8bfc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4500276402450822441
 GameObject:
   m_ObjectHideFlags: 0
