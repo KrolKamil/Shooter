@@ -36,7 +36,8 @@ public class SummonBoss : MonoBehaviour
             {
                 playerWantSummonBoss = false;
                 uiText.text = "";
-                Instantiate(Boss);
+                Transform t = gameObject.GetComponent<Transform>();
+                Instantiate(Boss, t.position, t.rotation);
             }
         }
 

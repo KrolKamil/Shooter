@@ -9,10 +9,14 @@ public class EnemyWeapon : MonoBehaviour
     public GameObject bulletPrefab;
     private float timer = 0.0f;
     private float shootedAt = 0.0f;
+    float distance = 100000f;
+    private Transform playerTransform;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.GetComponent < Transform > ();
         firePoint = gameObject.transform.Find("FirePoint");
     }
 
@@ -21,10 +25,14 @@ public class EnemyWeapon : MonoBehaviour
     {
         timer += Time.deltaTime;
         float timeBetweenShoot = timer - shootedAt;
-        if(timeBetweenShoot >= 1)
+        distance = Vector2.Distance(playerTransform.position, transform.position);
+        if(distance <= 10)
         {
-            shootedAt = timer;
-            Shoot();
+            if (timeBetweenShoot >= 1)
+            {
+                shootedAt = timer;
+                Shoot();
+            }
         }
     }
 

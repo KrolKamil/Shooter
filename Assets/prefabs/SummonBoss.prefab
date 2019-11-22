@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5658672944691303611}
   - component: {fileID: 5658672944691303610}
-  - component: {fileID: 5658672944691303609}
+  - component: {fileID: 114222393314981572}
   m_Layer: 0
   m_Name: SummonBoss
   m_TagString: Spawn
@@ -48,7 +48,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.67
---- !u!114 &5658672944691303609
+--- !u!114 &114222393314981572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
