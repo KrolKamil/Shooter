@@ -19,8 +19,8 @@ public class SpawnEnemy : MonoBehaviour
         
     }
 
-    public void createEnemy()
+    public void createEnemy(Transform hook)
     {
-        Instantiate(enemy);
+        Instantiate(enemy, hook.position, hook.rotation);
     }
 }

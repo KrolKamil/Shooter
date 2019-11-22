@@ -46,8 +46,27 @@ public class WeaponController : MonoBehaviour
         timer += Time.deltaTime;
         //float timeBetweenShoot = timer - shootedAt;
 
+        float loadTime1 = loadTimeSkill1 - (timer - skillFiredAt1);
+        if (loadTime1 < 0)
+        {
+            uiTextSkill1.text = "";
+        }
+        else
+        {
+            uiTextSkill1.text = loadTime1.ToString();
+        }
 
-        if(activeSkill1 == true)
+        float loadTime2 = loadTimeSkill2 - (timer - skillFiredAt2);
+        if (loadTime2 < 0)
+        {
+            uiTextSkill2.text = "";
+        }
+        else
+        {
+            uiTextSkill2.text = loadTime2.ToString();
+        }
+
+        if (activeSkill1 == true)
         {
             if((timer - skillFiredAt1) >= timeUsingSkill1)
             {

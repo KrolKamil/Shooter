@@ -8,7 +8,8 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Find("GameController");
+        GameObject go = GameObject.FindGameObjectWithTag("GameController");
+        gc = go.GetComponent<GameController>();
     }
 
     // Update is called once per frame

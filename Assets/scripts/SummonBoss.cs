@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class SummonBoss : MonoBehaviour
 {
     public Text uiText;
+    public GameObject Boss;
     private string informationText = "Press E to fix coffin";
     private bool canSummonBoss = false;
     private bool bossSummoned = false;
+    private bool playerWantSummonBoss = false;
+
+    private float timer;
+    private float startedSummoningAt;
 
     // Start is called before the first frame update
     void Start()
@@ -19,29 +24,57 @@ public class SummonBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        timer += Time.deltaTime;
+
+        if(playerWantSummonBoss == true)
         {
-            Debug.Log("SUMMON BOSS");
-            bossSummoned = true;
-            uiText.text = "";
+            float countDown = 3.0f - (timer - startedSummoningAt);
+
+            uiText.text = countDown.ToString();
+
+            if(countDown < 0)
+            {
+                playerWantSummonBoss = false;
+                uiText.text = "";
+                Instantiate(Boss);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        { 
+            if(bossSummoned == false)
+            {
+                bossSummoned = true;
+                uiText.text = "";
+                playerWantSummonBoss = true;
+                startedSummoningAt = timer;
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(bossSummoned == false)
+        PlayerController pc = collision.GetComponent<PlayerController>();
+        if (pc != null)
         {
-            canSummonBoss = true;
-            uiText.text = informationText;
+            if (bossSummoned == false)
+            {
+                canSummonBoss = true;
+                uiText.text = informationText;
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(bossSummoned == false)
+        PlayerController pc = collision.GetComponent<PlayerController>();
+        if (pc != null)
         {
-            canSummonBoss = false;
-            uiText.text = "";
+            if (bossSummoned == false)
+            {
+                canSummonBoss = false;
+                uiText.text = "";
+            }
         }
     }
 }

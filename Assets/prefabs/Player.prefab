@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 114210463076602344}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,3 +234,11 @@ MonoBehaviour:
     type: 3}
   explodingBullet: {fileID: 3553655774953346307, guid: dca7b1b0753400a40bcaa24044d19706,
     type: 3}
+  uiSkill1: {fileID: 0}
+  uiSkill2: {fileID: 0}
+  uiTextSkill1: {fileID: 0}
+  uiTextSkill2: {fileID: 0}
+  loadTimeSkill1: 10
+  loadTimeSkill2: 15
+  timeUsingSkill1: 3
+  timeUsingSkill2: 3

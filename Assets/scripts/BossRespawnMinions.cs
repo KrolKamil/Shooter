@@ -9,9 +9,10 @@ public class BossRespawnMinions : MonoBehaviour
     {
         HitPoints hp = gameObject.GetComponent<HitPoints>();
         SpawnEnemy sp = gameObject.GetComponent<SpawnEnemy>();
-        sp.createEnemy();
-        sp.createEnemy();
-        sp.createEnemy();
+        Transform hook = gameObject.GetComponent<Transform>();
+        sp.createEnemy(hook);
+        sp.createEnemy(hook);
+        sp.createEnemy(hook);
     }
 
     // Update is called once per frame
